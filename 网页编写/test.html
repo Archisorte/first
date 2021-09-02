@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+    <div id="top">
+        <div class="container">
+            <div class="left" >
+                <div class="vmall" >VMALL</div>
+                <div class="fenge" >|</div>
+                <div class="huaweizhuanqu" >华为专区</div>
+            </div>
+            <ul>
+                <li><a href="">手机</a></li>
+                <li><a href="">手表手环</a></li>
+                <li><a href="">耳机音箱</a></li>
+                <li><a href="">智慧屏</a></li>
+                <li><a href="">笔记本/平板</a></li>
+                <li><a href="">华为智选</a></li>
+                <li><a href="">企业购</a></li>
+            </ul>
+            <div class="right" >
+                <input type="text" placeholder="搜索..">
+                <a href=""><img src="../img/search.png"  alt=""></a>
+            </div>
+        </div>
+    </div>
+   
+    <div id="banner">
+        <div class="container1">
+            <div class="ad_show">
+                <img src="img/banner.png"  alt="">
+            </div>
+        </div>
+    </div>
+    <div id="nav">
+        <div class="container1">
+            <div class="nav_box">
+                <a href="">尊享礼遇</a>
+                <a href="">超级新品</a>
+                <a href="">爆款推荐</a>
+                <a href="">品类专区</a>
+                <a href="" class="fuli">更多福利</a>
+            </div>
+        </div>
+    </div>
+    <div id="ad">
+        <div class="container1">
+            <div class="ad_text">818</div>
+            <div class="ad_img"></div>
+        </div>
+    </div>
+    <div id="good1">
+        <div class="container1">
+            <div class="xinpin_text">超级新品</div>
+            <ul>
+                <li><a href=""><img src="img/goods.png" alt=""></a></li>
+                <li><a href=""><img src="img/goods.png" alt=""></a></li>
+                <li><a href=""><img src="img/goods.png" alt=""></a></li>
+                <li><a href=""><img src="img/goods.png" class="img4" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+   
+    <div id="after-sales">
+        <div class="container1"></div>
+    </div>
+    <div id="back">
+        <div class="container1">
+            <div class="container2">
+                <div class="back1"><a href="" id="back11">新品专区 ></a></div>
+                <div class="back2"><a href="javascript:;" id="back22">返回顶部 ∧</a></div>
+            </div>
+           
+        </div>
+    </div>
+    <!-- 返回顶部 -->
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    // 页面加载后执行
+    window.onload=function(){
+        var toTop=document.getElementById("back22");
+        toTop.onclick=function(){
+            var timer=setInterval(function(){
+                var backTop=document.documentElement.scrollTop;
+                var speedTop=backTop/2;
+                document.documentElement.scrollTop-=backTop-speedTop;
+                if (backTop==0)
+                clearInterval(timer);
+            },30);
+            
+        }
+
+
+        top_nav=document.getElementById("nav").offsetTop;
+
+        var nav_stay=$("#nav");
+        $(window).scroll(function(){
+        var pos_scroll=document.documentElement.scrollTop;
+          if(pos_scroll>top_nav){
+          nav_stay.css("position","fixed")
+          nav_stay.css("top", 0+"px");
+  }
+          else{
+          nav_stay.css("position","relative")
+      }
+  });
+    }
+    </script>
+
+
+   
+</body>
+</html>
